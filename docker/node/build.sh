@@ -6,6 +6,8 @@ if [ ! -f /var/www/echo/.env ]
     cp /var/www/echo/.env.example /var/www/echo/.env
 fi
 
+mkdir -p /tmp/log/node
+
 #to run as in supervisord
 #/usr/bin/supervisord -c /etc/supervisord.conf
 
