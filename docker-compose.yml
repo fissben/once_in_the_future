@@ -14,6 +14,8 @@ services:
     volumes:
     - ./application/echo:/var/www/echo
     - ./tmp/log:/tmp/log
+    depends_on:
+      - redis
     networks:
       net-echo-at-time:
         ipv4_address: 172.16.39.11
