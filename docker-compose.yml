@@ -1,0 +1,36 @@
+version: '3.3'
+
+services:
+  node:
+    container_name: echo_node
+    tty: true
+    restart: always
+    build:
+      context:
+        ./docker/node
+    expose:
+    - "3000"
+    command: "sh /build.sh"
+    volumes:
+    - ./application/echo:/var/www/echo
+    - ./tmp/log:/tmp/log
+    networks:
+      net-echo-at-time:
+        ipv4_address: 172.16.39.11
+
+  redis:
+     container_name: echo_redis
+     image: redis:latest
+     restart: always
+     expose:
+       - "6379"
+     networks:
+       net-echo-at-time:
+         ipv4_address: 172.16.39.25
+
+networks:
+  net-echo-at-time:
+    ipam:
+      driver: default
+      config:
+      - subnet: 172.16.39.0/24

@@ -1,0 +1,22 @@
+{
+  "name": "echo_at_ts",
+  "version": "0.0.1",
+  "description": "Test app for sending messages to the future :)",
+  "main": "app.js",
+  "scripts": {
+    "test": "mocha tests/test.js --reporter nyan"
+  },
+  "author": "Dmytro Kokot",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^6.1.0",
+    "fastify": "^1.13.0",
+    "redis": "^2.8.0",
+    "uuid": "^3.3.2",
+    "pino": "^6.3.2"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^5.2.0"
+  }
+}
