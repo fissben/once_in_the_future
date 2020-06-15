@@ -45,7 +45,7 @@
   ```
  npm test
 ```
-  ##potential todo 
+  ## Potential todo 
 
 1. Implement tests for Dispatcher
 2. Refactor for scaling k8s 
