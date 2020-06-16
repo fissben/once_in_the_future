@@ -22,7 +22,25 @@
   Server will be available at NODE_HOST:NODE_PORT
 
   For docker-compose start it's http://172.16.39.11:3000/
-
+  
+  Note: On macOS and Windows, please add port forwarding to `node` section in ``docker-compose.yml``:
+  ```yml
+  #...
+    node:
+      container_name: echo_node
+      tty: true
+      restart: always
+      build:
+        context:
+          ./docker/node
+      expose:
+      - "3000"
+      #start  
+      ports:
+        - "3000:3000"
+      #end
+  #...  
+  ```
 
 ## API
   
@@ -34,6 +52,7 @@
   | ------------- | ------------- |
   | **time**  |  `<Number>` JavaScript timestamp (multiplied by 1000)  |
   | **message**  | `<String>` Message to send |
+  
   http://172.16.39.11:3000/echoAtTime?time=1592236783521&message=hello%20world5
   
   ## Tests 
