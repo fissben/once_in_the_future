@@ -23,7 +23,7 @@
 
   For docker-compose start it's http://172.16.39.11:3000/
   
-  Note: On macOS and Windows, please add port forwarding to `node` section in ``docker-compose.yml``:
+  Note: On macOS and Windows to reach service on http://localhost:3000, please add port forwarding to `node` section in ``docker-compose.yml``:
   ```yml
   #...
     node:
